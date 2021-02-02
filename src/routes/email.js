@@ -2,6 +2,11 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const router = express.Router();
 
+/**
+ * G메일의 '보안 수준이 낮은 앱의 액세스'를 허용해야 메일이 보내진다.
+ * https://myaccount.google.com/lesssecureapps
+ */
+
 router.post('/', async (req, res) => {
   const { name, sex, birth, phone, email, q1, q2 } = req.body;
 
